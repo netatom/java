@@ -18,17 +18,17 @@ public BoardController(BoardService boardService) {
 	this.boardService = boardService;
 }
 
-//테이블 리스트 가져오기
+// 테이블 리스트 가져오기
 @GetMapping(value = "/")
 public Iterable<Board> list() {
 	return boardService.findAll();
 }
 
-// POST로 유저 추가
+// 테이블 레코드 추가
 @PostMapping
-public Board post(@RequestParam("subject") String subject, @RequestParam("board_body") String board_body) {
-	Board board = new Board(subject, board_body);
-	return boardService.save(board);
+public Board post(@RequestBody Board dto) {
+    Board board = new Board(dto.getSubject(), dto.getBoard_body());
+    return boardService.save(board);
 }
 
 // board_id로 테이블 값 가져오기
@@ -39,8 +39,8 @@ public Optional<Board> findOne(@PathVariable("board_id") Long board_id) {
 
 // board_id로 테이블 값 수정하기
 @PutMapping(value = "/{board_id}")
-public Board update(@PathVariable("board_id") Long board_id, @RequestParam("subject") String subject, @RequestParam("board_body") String board_body) {
-	return boardService.update(board_id, subject, board_body);
+public Board update(@PathVariable("board_id") Long board_id, @RequestBody BoardDto dto) {
+    return boardService.update(board_id, dto.getSubject(), dto.getBoard_body());
 }
 
 // board_id로 테이블 값 삭제하기

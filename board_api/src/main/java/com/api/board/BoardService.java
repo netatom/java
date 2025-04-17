@@ -40,9 +40,9 @@ public Board save(Board board) {
 public Board update(Long board_id, String subject, String board_body) {
 	Optional<Board> optionalBoard = boardRepository.findById(board_id);
 	if (optionalBoard.isPresent()) {
-	Board board = optionalBoard.get();
-	board.setSubject(subject);
-	board.setBoard_body(board_body);
+		Board board = optionalBoard.get();
+		board.setSubject(subject);
+		board.setBoard_body(board_body);
 	return boardRepository.save(board);
 }
 
