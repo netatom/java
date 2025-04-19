@@ -1,0 +1,95 @@
+/* 전체 컨테이너 */
+#container {
+    width: 800px;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+}
+
+/* 제목 */
+.boardHeader h1 {
+    font-size: 24px;
+    margin: 20px 0;
+    text-align: center;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 10px;
+}
+
+/* 설명 */
+.boardDescription {
+    margin-bottom: 20px;
+    color: #555;
+    text-align: center;
+}
+
+/* 테이블 */
+.boardList {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.boardList th, .boardList td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+.boardList th {
+    background-color: #f2f2f2;
+}
+
+/* 줄 색상 구분 */
+.boardList tr.bg2 {
+    background-color: #fafafa;
+}
+
+/* 버튼 스타일 */
+.button {
+    display: inline-block;
+    background-color: #4CAF50;
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 4px;
+    margin: 5px;
+}
+
+.button:hover {
+    background-color: #45a049;
+}
+
+/* 글 제목 스타일 */
+.title h1 {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+/* 내용 텍스트 영역 */
+.readBody {
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+
+/* 날짜 및 조회수 */
+.dataAndCount {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 13px;
+    color: #888;
+}
+
+.centerButtonBox {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.centerButtonBox .button {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+th.title, td.title {
+    width: 60%;
+}
