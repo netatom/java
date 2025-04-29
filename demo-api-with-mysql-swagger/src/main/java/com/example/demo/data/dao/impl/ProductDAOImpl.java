@@ -9,33 +9,22 @@ import com.example.demo.data.repository.ProductRepository;
 @Service
 public class ProductDAOImpl implements ProductDAO {
 
-
   ProductRepository productRepository;
 
   @Autowired
   public ProductDAOImpl(ProductRepository productRepository) {
+
     this.productRepository = productRepository;
   }
 
   @Override
   public Product saveProduct(Product product) {
-    Product product1 = productRepository.save(product);
-    return product1;
+    return productRepository.save(product);
   }
 
   @Override
   public Product getProduct(String productId) {
-    Product product = productRepository.getById(productId);
-    return product;
+    return productRepository.getById(productId);
   }
 
-  /** Repository에서 기본적으로 제공하는 대표적인 메소드 */
-  private void testRepositoryMethod() {
-    /*    productRepository.save();
-    productRepository.getById();
-    productRepository.delete();
-    productRepository.deleteAll();
-    productRepository.findAll();
-    productRepository.saveAll();*/
-  }
 }

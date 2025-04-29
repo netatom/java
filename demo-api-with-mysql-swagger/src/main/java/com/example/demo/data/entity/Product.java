@@ -6,7 +6,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "product")
-public class Product {
+public class Product extends BaseEntity {
 
   @Id
   private String id;

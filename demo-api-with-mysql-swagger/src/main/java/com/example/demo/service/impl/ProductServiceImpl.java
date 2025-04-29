@@ -18,23 +18,16 @@ public class ProductServiceImpl implements ProductService {
   }
 
   @Override
-  public ProductDto saveProduct(
-      String productId, String productName, int productPrice, int productStock) {
-
-    Product product =
-        productDataHandler.saveProductEntity(productId, productName, productPrice, productStock);
-
-    ProductDto productDto =
-        new ProductDto(product.getId(), product.getName(), product.getPrice(), product.getStock());
-
+  public ProductDto saveProduct(String productId, String productName, int productPrice, int productStock) {
+    Product product = productDataHandler.saveProductEntity(productId, productName, productPrice, productStock);
+    ProductDto productDto = new ProductDto(product.getId(), product.getName(), product.getPrice(), product.getStock());
     return productDto;
   }
 
   @Override
   public ProductDto getProduct(String productId) {
-
     Product product = productDataHandler.getProductEntity(productId);
-    ProductDto productDto =new ProductDto(product.getId(), product.getName(), product.getPrice(), product.getStock());
+    ProductDto productDto = new ProductDto(product.getId(), product.getName(), product.getPrice(), product.getStock());
     return productDto;
   }
 }

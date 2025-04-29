@@ -10,7 +10,6 @@ import com.example.demo.data.entity.Product;
 import com.example.demo.data.handler.ProductDataHandler;
 
 @Service
-@Transactional
 public class ProductDataHandlerImpl implements ProductDataHandler {
 
   ProductDAO productDAO;
@@ -21,6 +20,7 @@ public class ProductDataHandlerImpl implements ProductDataHandler {
   }
 
   @Override
+  @Transactional
   public Product saveProductEntity(
       String productId, String productName, int productPrice, int productStock) {
 	  
@@ -31,6 +31,7 @@ public class ProductDataHandlerImpl implements ProductDataHandler {
 
   @Override
   public Product getProductEntity(String productId) {
+
     return productDAO.getProduct(productId);
   }
 }
